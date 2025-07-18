@@ -25,7 +25,7 @@ In the semiconductor industry, wafers are thin discs used to fabricate microelec
 
 These scratches can be caused by equipment misalignment or handling errors. The process of identifying them often involves manually marking good dies that lie within a scratch's path for removal, a process called **"inking."** This manual process is expensive, time-consuming, and prone to human error.
 
-<img src="aggregated_wafer_map.png" width="400" alt="Wafer Map with Marks">
+<img src="wafer_map_with_marks.png" width="400" alt="Wafer Map with Marks">
 
 *Fig.1 - A wafer map showing good dies (green), bad dies (red), scratch dies (blue), and inked dies (yellow).*
 
@@ -92,16 +92,12 @@ The connected components approach proved far more effective at balancing the tra
 
 <img src="comprehensive_performance_analysis.png" width="800" alt="Component Size Impact Analysis 1">
 
-*Fig.5 - Performance metrics with varying `min_size`. The model with `min_size=3` achieves the highest F1-score.*
-
-<img src="comprehensive_performance_analysis_updated.png" width="800" alt="Component Size Impact Analysis 2">
-
-*Fig.6 - A different view of the trade-off. As `min_size` increases, precision rises, but recall drops significantly.*
+*Fig.5 - Performance metrics with varying `min_size`. The model with `min_size=4` achieves the highest F1-score.*
 
 ### Key Takeaways
 
-- **Precision-Recall Trade-off**: A smaller `min_size` (e.g., 3) maximizes recall at the cost of precision, while a larger `min_size` (e.g., 7) does the opposite.
-- **Optimal Model Selection**: The F1-score was chosen as the primary metric to balance this trade-off. The model with `min_size=3` achieved the highest F1-score of **0.749**, providing the best overall performance.
+- **Precision-Recall Trade-off**: A smaller `min_size` (e.g., 4) maximizes recall at the cost of precision, while a larger `min_size` (e.g., 5) does the opposite.
+- **Optimal Model Selection**: The F1-score was chosen as the primary metric to balance this trade-off. The model with `min_size=4` achieved the highest F1-score of **0.77**, providing the best overall performance.
 - **Alignment with Business Goals**:  
   - If **missing a scratch** is more costly, a lower `min_size` is better.  
   - If **wasting a good die** is more costly, a higher `min_size` is preferred.  
